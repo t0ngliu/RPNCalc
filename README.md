@@ -6,11 +6,13 @@ The RPN calculator is written mostly in C++.
 Read more about RPN calculator here: http://www.calculator.org/rpn.aspx
 
 ## Using C-RPN
+**Compiling and running on Windows**
+
 1. Download the source code
 2. Open 'RPNCalcMain' with favourite C/C++ IDE
 3. Run 'RPNCalcMain'
 
-**Compiling and running with Terminal (Mac OS)**
+**Compiling and running with Terminal (Mac OS) (The program currently does NOT work on Mac OS)**
 
 1. Download the source code
 2. Make sure a C/C++ compiler is installed on your computer
