@@ -1,7 +1,7 @@
 # C-RPN
 
 ## Description 
-The RPN calculator is written mostly in C++. 
+The RPN calculator is written mostly in C++ with a hint of C. 
 
 Read more about RPN calculator here: http://www.calculator.org/rpn.aspx
 
