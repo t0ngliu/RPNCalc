@@ -1,14 +1,10 @@
-/* @author Tong Liu
- * @version 1.0
- */
-
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <windows.h>
 
-#include "stack.h"
-#include "drawCalc.h"
+#include "stack.hpp"
+#include "drawCalc.hpp"
 
 using namespace std;
 

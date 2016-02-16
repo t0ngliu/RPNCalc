@@ -1,7 +1,3 @@
-/* @author Tong Liu
- * @version 1.0
- */
-
 #ifndef STACK_CPP
 #define STACK_CPP
 

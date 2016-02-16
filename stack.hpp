@@ -1,9 +1,5 @@
-/* @author Tong Liu
- * @version 1.0
- */
-
-#ifndef STACK_H
-#define STACK_H
+#ifndef STACK_HPP
+#define STACK_HPP
 
 struct NODE{
     float num;

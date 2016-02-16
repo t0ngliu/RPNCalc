@@ -1,12 +1,10 @@
-/* @author Tong Liu
- * @version 1.0
- */
-
 #ifndef DRAWCALC_CPP
 #define DRAWCALC_CPP
 
 #include <iostream>
 #include <windows.h>
+
+#include "drawCalc.hpp"
 
 using namespace std;
 
