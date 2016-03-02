@@ -3,23 +3,24 @@
 #include <sstream>
 #include <windows.h>
 
-#include "stack.hpp"
-#include "drawCalc.hpp"
+#include "Stack.hpp"
+#include "DrawCalc.hpp"
+#include "MathStack.hpp"
 
 using namespace std;
 
 // converts a string to a number
 float stringToNum(string instring);
 //do operation, and returns whether the operation is successful 
-bool doOperation(string input, mathStack &calc);
+bool doOperation(string input, MathStack &calc);
 bool isNum(string instring);
 //prints out the stack
-void displayResult(mathStack& calc);
+void displayResult(MathStack& calc);
 
 int main()
 {
-    mathStack calculator;
-    mathStack& calculatorRef = calculator;
+    MathStack calculator;
+    MathStack& calculatorRef = calculator;
     char cinput[50];
     string input;
     
@@ -81,7 +82,7 @@ float stringToNum(string instring)
 }
 
 //do operation, and returns whether the operation is successful 
-bool doOperation(string input, mathStack &calc)
+bool doOperation(string input, MathStack &calc)
 {
     bool isResolved = true;   //stores whether the input was processed
     bool good = true;       //stores if there was a operation error
@@ -195,7 +196,7 @@ bool isNum(string instring)
 }
 
 //prints out the stack
-void displayResult(mathStack& calc)
+void displayResult(MathStack& calc)
 {
     for (int i = 0; i < calc.getSize() && i <= 16; i++)  //prints no more than 17 numbers
     {

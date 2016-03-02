@@ -1,12 +1,8 @@
-/* @author Tong Liu
- * @version 1.0
- */
-
-#ifndef MATHSTACK_CPP
-#define MATHSTACK_CPP
 #define PI 3.14159265359
 
 #include <cmath>
+
+#include "MathStack.hpp"
 
 /* Each of the opration functions calls the push and pop methods
    defined in stack header file. Each time one of these operations
@@ -14,25 +10,25 @@
    All operation functions return true if the operation succeeds,
    otherwise return false */
    
-bool mathStack::add()
+bool MathStack::add()
 {
     push(pop() + pop());
     return(true);
 }
 
-bool mathStack::subtract()
+bool MathStack::subtract()
 {
     push(0 - pop() + pop());
     return(true);
 }
 
-bool mathStack::multiply()
+bool MathStack::multiply()
 {
     push(pop() * pop());
     return(true);
 }
 
-bool mathStack::divide()
+bool MathStack::divide()
 {
     if (get(0) != 0)  //cannot divide by zero
     {
@@ -42,7 +38,7 @@ bool mathStack::divide()
     return(false);
 }
 
-bool mathStack::takesin()
+bool MathStack::takesin()
 {
     if (fmod(get(0), 180) == 0)     //for rounding reasons when converting to degrees, sin(90) will not return 0 otherwise
         push(0);
@@ -51,7 +47,7 @@ bool mathStack::takesin()
     return(true);
 }
 
-bool mathStack::takecos()
+bool MathStack::takecos()
 {
     if (fmod(get(0) - 90, 180) == 0) //see above
         push(0);
@@ -60,7 +56,7 @@ bool mathStack::takecos()
     return(true);
 }
 
-bool mathStack::taketan()
+bool MathStack::taketan()
 {
     if (fmod(get(0) - 90, 180) != 0)
     {
@@ -73,7 +69,7 @@ bool mathStack::taketan()
     return(false);
 }
 
-bool mathStack::takeasin()
+bool MathStack::takeasin()
 {
     if (get(0) >= -1 && get(0) <= 1)  //domain check
     {
@@ -83,7 +79,7 @@ bool mathStack::takeasin()
     return(false);
 }
 
-bool mathStack::takeacos()
+bool MathStack::takeacos()
 {
     if (get(0) >= -1 && get(0) <= 1)  //domain check
     {
@@ -93,13 +89,13 @@ bool mathStack::takeacos()
     return(false);
 }
 
-bool mathStack::takeatan()
+bool MathStack::takeatan()
 {
     push(atan(pop()) / PI * 180);
     return(true);
 }
 
-bool mathStack::power()
+bool MathStack::power()
 {
     if (finite(pow(get(1), get(0))))  //finite(float) checks if the number is defined (that is, not NaN) 
     {
@@ -109,14 +105,14 @@ bool mathStack::power()
     return(false);
 }
 
-bool mathStack::square()
+bool MathStack::square()
 {
     float num = pop();
     push(num * num);
     return(true);
 }
 
-bool mathStack::sqroot()
+bool MathStack::sqroot()
 {
     if (get(0) >= 0)        //domain check
     {
@@ -126,7 +122,7 @@ bool mathStack::sqroot()
     return(false);
 }
 
-bool mathStack::takelog()
+bool MathStack::takelog()
 {
     if (get(0) > 0)         //domain check
     {
@@ -136,7 +132,7 @@ bool mathStack::takelog()
     return(false);
 }
 
-bool mathStack::ln()
+bool MathStack::ln()
 {
     if (get(0) > 0)         //domain check
     {
@@ -146,7 +142,7 @@ bool mathStack::ln()
     return(false);
 }
 
-bool mathStack::rcp()
+bool MathStack::rcp()
 {
     if (get(0) != 0)       //0 has no defined reciprocal
     {
@@ -156,13 +152,13 @@ bool mathStack::rcp()
     return(false);
 }
 
-bool mathStack::flipsign()
+bool MathStack::flipsign()
 {
     push(-1 * pop());
     return(true);
 }
 
-bool mathStack::xchge()
+bool MathStack::xchge()
 {
     float a = pop();
     float b = pop();
@@ -172,8 +168,7 @@ bool mathStack::xchge()
 }
 
 //returns the value from the top of the stack without removing it from the stack
-float mathStack::display()
+float MathStack::display()
 {
     return get(0);
 }
-#endif

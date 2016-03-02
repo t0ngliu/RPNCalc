@@ -1,10 +1,7 @@
-#ifndef DRAWCALC_CPP
-#define DRAWCALC_CPP
-
 #include <iostream>
 #include <windows.h>
 
-#include "drawCalc.hpp"
+#include "DrawCalc.hpp"
 
 using namespace std;
 
@@ -123,4 +120,3 @@ void clearCalculator()
             cout << " ";
     }
 }
-#endif
